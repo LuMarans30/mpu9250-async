@@ -1,6 +1,6 @@
-use mpu6050::{*, device::MOT_DETECT_STATUS};
+use mpu6050_async::{*, device::MOT_DETECT_STATUS};
 use linux_embedded_hal::{I2cdev, Delay};
-use embedded_hal::delay::DelayNs;
+use embedded_hal_async::delay::DelayNs;
 use i2cdev::linux::{LinuxI2CError};
 
 fn main() -> Result<(), Mpu6050Error<LinuxI2CError>> {
@@ -8,7 +8,7 @@ fn main() -> Result<(), Mpu6050Error<LinuxI2CError>> {
         .map_err(Mpu6050Error::I2c)?;
 
     let mut delay = Delay;
-    let mut mpu = Mpu6050::new(i2c);
+    let mut mpu = Mpu6050::new(i2c).await;
     
     mpu.init(&mut delay).unwrap();
     mpu.setup_motion_detection().unwrap();

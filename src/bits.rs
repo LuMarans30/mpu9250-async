@@ -22,7 +22,7 @@ pub fn get_bits(mut byte: u8, bit_start: u8, length: u8) -> u8 {
     // therefore just "cut off" at 0 shift
     let mask_shift: u8 = if bit_start < length { 0 } else { bit_start - length + 1 };
     let mask: u8 = ((1 << length) - 1) << mask_shift;
-    byte &= mask as u8;
+    byte &= mask;
     byte >>= mask_shift;
     byte
 }

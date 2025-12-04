@@ -1,8 +1,8 @@
-use mpu6050::{*, device::*};
+use mpu6050_async::{*, device::*};
 
 use linux_embedded_hal::{I2cdev, Delay};
 use i2cdev::linux::LinuxI2CError;
-use mpu6050::device::{ACCEL_HPF, CLKSEL};
+use mpu6050_async::device::{ACCEL_HPF, CLKSEL};
 
 fn main() -> Result<(), Mpu6050Error<LinuxI2CError>> {
     let i2c = I2cdev::new("/dev/i2c-1")

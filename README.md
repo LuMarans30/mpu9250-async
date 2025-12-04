@@ -1,5 +1,9 @@
-# `mpu6050` ![crates.io](https://img.shields.io/crates/v/mpu6050.svg) ![CircleCI](https://img.shields.io/circleci/build/github/juliangaal/mpu6050.svg)
-> no_std driver for the MPU6050 6-axis IMU
+# `mpu6050-async` ![crates.io](https://img.shields.io/crates/v/mpu6050.svg) ![CircleCI](https://img.shields.io/circleci/build/github/juliangaal/mpu6050.svg)
+> async no_std driver for the MPU6050 6-axis IMU
+
+> [!NOTE]  
+> Everything below this note has not been adjusted from the original `mpu6050` crate.
+> Some tests and examples do not compile.
 
 ## What Works
 * Reading the accelerometer, gyroscope, temperature sensor
