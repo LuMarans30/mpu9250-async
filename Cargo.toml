@@ -1,11 +1,11 @@
 [package]
 name = "mpu6050-async"
-version = "0.1.6"
-authors = ["Julian Gaal <gjulian@uos.de>"]
-edition = "2018"
+version = "0.1.0"
+authors = ["Max Daubmann"]
+edition = "2024"
 
-description = "Platform agnostic driver for MPU6050 6-axis IMU"
-repository = "https://github.com/juliangaal/mpu6050"
+description = "Platform agnostic async driver for MPU6050 6-axis IMU"
+repository = "TODO"
 readme = "README.md"
 keywords = ["mpu6050", "imu", "embedded"]
 license = "MIT"

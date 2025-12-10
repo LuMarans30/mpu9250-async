@@ -1,11 +1,9 @@
-# `mpu6050-async` ![crates.io](https://img.shields.io/crates/v/mpu6050.svg) ![CircleCI](https://img.shields.io/circleci/build/github/juliangaal/mpu6050.svg)
-> async no_std driver for the MPU6050 6-axis IMU
+# `mpu6050-async`
 
-> [!NOTE]  
-> Everything below this note has not been adjusted from the original `mpu6050` crate.
-> Some tests and examples do not compile.
+> async no_std driver for the MPU6050 6-axis IMU, based on the [`mpu6050`](https://crates.io/crates/mpu6050) crate by Julian Gaal.
 
 ## What Works
+
 * Reading the accelerometer, gyroscope, temperature sensor
     * raw
     * scaled
@@ -14,39 +12,8 @@
 * Setting Accel/Gyro Ranges/Sensitivity
 * Setting Accel HPF/LPF
 
-## Basic usage 
-To use this driver you must provide a concrete `embedded_hal` implementation. Here's a 
-[`linux_embedded_hal`](https://github.com/rust-embedded/linux-embedded-hal) example
-```rust
-use mpu6050::*;
-use linux_embedded_hal::{I2cdev, Delay};
-use i2cdev::linux::LinuxI2CError;
+## Basic usage
 
-fn main() -> Result<(), Mpu6050Error<LinuxI2CError>> {
-    let i2c = I2cdev::new("/dev/i2c-1")
-        .map_err(Mpu6050Error::I2c)?;
+To use this driver you must provide a concrete `embedded_hal_async` implementation.
 
-    let mut delay = Delay;
-    let mut mpu = Mpu6050::new(i2c);
-
-    mpu.init(&mut delay).unwrap();
-
-    loop {
-        // get roll and pitch estimate
-        let acc = mpu.get_acc_angles().unwrap();
-        println!("r/p: {:?}", acc);
-
-        // get sensor temp
-        let temp = mpu.get_temp().unwrap();
-        println!("temp: {:?}c", temp);
-
-        // get gyro data, scaled with sensitivity 
-        let gyro = mpu.get_gyro().unwrap();
-        println!("gyro: {:?}", gyro);
-
-        // get accelerometer data, scaled with sensitivity
-        let acc = mpu.get_acc().unwrap();
-        println!("acc: {:?}", acc);
-    }
-}
-```
+Refer to the original [`mpu6050`](https://crates.io/crates/mpu6050) crate for usage examples. This crate is identical to `mpu6050`, but some functions are `async`.
