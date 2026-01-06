@@ -5,7 +5,7 @@ authors = ["Max Daubmann"]
 edition = "2024"
 
 description = "Platform agnostic async driver for MPU6050 6-axis IMU"
-repository = "TODO"
+repository = "https://codeberg.org/COLORADIO-Project/mpu6050-async"
 readme = "README.md"
 keywords = ["mpu6050", "imu", "embedded"]
 license = "MIT"
