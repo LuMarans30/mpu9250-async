@@ -1,9 +1,3 @@
-/target
-*/target
-example/**/*.rs.bk
-example/Cargo.lock
-.idea/
-**/*.rs.bk
+target
 Cargo.lock
-.DS_Store
-*.swp
+
