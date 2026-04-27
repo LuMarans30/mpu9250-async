@@ -185,8 +185,8 @@ where
 
     /// setup motion detection
     /// sources:
-    /// * https://github.com/kriswiner/MPU6050/blob/a7e0c8ba61a56c5326b2bcd64bc81ab72ee4616b/MPU6050IMU.ino#L486
-    /// * https://arduino.stackexchange.com/a/48430
+    /// * <https://github.com/kriswiner/MPU6050/blob/a7e0c8ba61a56c5326b2bcd64bc81ab72ee4616b/MPU6050IMU.ino#L486>
+    /// * <https://arduino.stackexchange.com/a/48430>
     pub async fn setup_motion_detection(&mut self) -> Result<(), Mpu6050Error<E>> {
         self.write_byte(0x6B, 0x00).await?;
         // optional? self.write_byte(0x68, 0x07)?; // Reset all internal signal paths in the MPU-6050 by writing 0x07 to register 0x68;
@@ -395,7 +395,7 @@ where
 
     /// Roll and pitch estimation from raw accelerometer readings
     /// NOTE: no yaw! no magnetometer present on MPU6050
-    /// https://www.nxp.com/docs/en/application-note/AN3461.pdf equation 28, 29
+    /// <https://www.nxp.com/docs/en/application-note/AN3461.pdf> equation 28, 29
     pub async fn get_acc_angles(&mut self) -> Result<Vector2<f32>, Mpu6050Error<E>> {
         let acc = self.get_acc().await?;
 
@@ -641,7 +641,7 @@ where
         Ok((raw / 333.87) + 21.0)
     }
 
-    /// Magnetometer reading in µT. Delegates entirely to [`Ak8963::read_mag`].
+    /// Magnetometer reading in µT. Delegates entirely to [`ak8963::Ak8963::read_mag`].
     /// Axis are remapped to match the accelerometer/gyroscope axis
     pub async fn get_mag(&mut self) -> Result<Vector3<f32>, Mpu9250Error<E>>
     where
@@ -652,7 +652,7 @@ where
         Ok(Vector3::new(my, mx, -mz))
     }
 
-    /// Magnetometer reading in µT. Delegates entirely to [`Ak8963::read_mag`].
+    /// Magnetometer reading in µT. Delegates entirely to [`ak8963::Ak8963::read_mag`].
     /// Axis are not remapped
     pub async fn get_mag_raw(&mut self) -> Result<(i16, i16, i16), Mpu9250Error<E>> {
         let mut buf = [0u8; 6];

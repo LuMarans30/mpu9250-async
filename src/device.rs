@@ -4,8 +4,8 @@
 //! particularly rev 3.2
 //!
 //! #### Sources:
-//! * Register map (rev 3.2): https://arduino.ua/docs/RM-MPU-6000A.pdf
-//! * Datasheet (rev 3.2): https://www.cdiweb.com/datasheets/invensense/ps-mpu-6000a.pdf
+//! * Register map (rev 3.2): <https://arduino.ua/docs/RM-MPU-6000A.pdf>
+//! * Datasheet (rev 3.2): <https://www.cdiweb.com/datasheets/invensense/ps-mpu-6000a.pdf>
 
 /// Gyro Sensitivity
 ///
@@ -13,10 +13,10 @@
 /// x * range/2**(resolution-1) or x / (2**(resolution-1) / range)
 ///
 /// Sources:
-///     * https://www.nxp.com/docs/en/application-note/AN3461.pdf
-///     * https://theccontinuum.com/2012/09/24/arduino-imu-pitch-roll-from-accelerometer/
-///     * https://makersportal.com/blog/2019/8/17/arduino-mpu6050-high-frequency-accelerometer-and-gyroscope-data-saver#accel_test
-///     * https://github.com/kriswiner/MPU6050/wiki/2014-Invensense-Developer%27s-Conference
+///     * <https://www.nxp.com/docs/en/application-note/AN3461.pdf>
+///     * <https://theccontinuum.com/2012/09/24/arduino-imu-pitch-roll-from-accelerometer/>
+///     * <https://makersportal.com/blog/2019/8/17/arduino-mpu6050-high-frequency-accelerometer-and-gyroscope-data-saver#accel_test>
+///     * <https://github.com/kriswiner/MPU6050/wiki/2014-Invensense-Developer%27s-Conference>
 ///     * rust MPU9250 driver on github
 pub const GYRO_SENS: [f32; 4] = [131.0, 65.5, 32.8, 16.4];
 
@@ -26,10 +26,10 @@ pub const GYRO_SENS: [f32; 4] = [131.0, 65.5, 32.8, 16.4];
 ///
 /// x * range/2**(resolution-1) or x / (2**(resolution-1) / range)
 /// Sources:
-///     * https://www.nxp.com/docs/en/application-note/AN3461.pdf
-///     * https://theccontinuum.com/2012/09/24/arduino-imu-pitch-roll-from-accelerometer/
-///     * https://makersportal.com/blog/2019/8/17/arduino-mpu6050-high-frequency-accelerometer-and-gyroscope-data-saver#accel_test
-///     * https://github.com/kriswiner/MPU6050/wiki/2014-Invensense-Developer%27s-Conference
+///     * <https://www.nxp.com/docs/en/application-note/AN3461.pdf>
+///     * <https://theccontinuum.com/2012/09/24/arduino-imu-pitch-roll-from-accelerometer/>
+///     * <https://makersportal.com/blog/2019/8/17/arduino-mpu6050-high-frequency-accelerometer-and-gyroscope-data-saver#accel_test>
+///     * <https://github.com/kriswiner/MPU6050/wiki/2014-Invensense-Developer%27s-Conference>
 ///     * rust MPU9250 driver on github
 pub const ACCEL_SENS: [f32; 4] = [16384., 8192., 4096., 2048.];
 /// Temperature Offset
