@@ -1,19 +1,19 @@
-# `mpu6050-async`
-
-> async no_std driver for the MPU6050 6-axis IMU, based on the [`mpu6050`](https://crates.io/crates/mpu6050) crate by Julian Gaal.
+# `mpu9250-async`
 
 ## What Works
 
-* Reading the accelerometer, gyroscope, temperature sensor
+* Reading the accelerometer, gyroscope, temperature, magnetometer sensor
     * raw
     * scaled
     * roll/pitch estimation
 * Motion Detection
 * Setting Accel/Gyro Ranges/Sensitivity
 * Setting Accel HPF/LPF
+* Setting AK8963 Magnetometer
 
 ## Basic usage
 
 To use this driver you must provide a concrete `embedded_hal_async` implementation.
 
-Refer to the original [`mpu6050`](https://crates.io/crates/mpu6050) crate for usage examples. This crate is identical to `mpu6050`, but some functions are `async`.
+## Acknowledgements
+This crate was originally forked from and inspired by the [`mpu6050-async` crate](https://crates.io/crates/mpu6050-async) by [max-dau](https://crates.io/users/max-dau). It has been modified to add support for the MPU9250's internal AK8963 magnetometer.
